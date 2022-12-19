@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="WhatsNewChat - Start a WhatsApp chat without saving phone number in your contacts"
+    />
+    <meta name="theme-color" content="#128C7E" />
+    <meta name="msapplication-TileColor" content="#128C7E" />
+    <meta name="msapplication-TileImage" content="./images/logo-192.png" />
+    <meta name="apple-mobile-web-app-title" content="WhatsNewChat" />
+    <meta name="application-name" content="WhatsNewChat" />
+    <link rel="icon" type="image/png" href="./images/fav.png" />
+    <link rel="canonical" href="https://whatsnewchat.com" />
+
+    <!-- Apple and Android home screen icons -->
+    <link href="./images/logo-128.png" rel="apple-touch-icon" />
+    <!-- 120x120px apple-touch-icon.png -->
+    <link href="./images/logo-152.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="./images/logo-167.png" rel="apple-touch-icon" sizes="167x167" />
+    <link href="./images/logo-180.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="./images/logo-192.png" rel="icon" sizes="192x192" />
+    <link href="./images/logo-128.png" rel="icon" sizes="128x128" />
+    <link href="./images/logo-32.png" rel="icon" sizes="32x32" />
+    <link href="./images/logo-16.png" rel="icon" sizes="16x16" />
+
+    <!-- Apple hide Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Apple changing the status bar appearance -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- Android add to the home screen -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Open graph tags -->
+    <meta
+      property="og:title"
+      content="WhatsNewChat - Start WhatsApp Chat Without Saving Number"
+    />
+    <meta property="og:site_name" content="WhatsNewChat" />
+    <meta property="og:url" content="https://whatsnewchat.com" />
+    <meta
+      property="og:description"
+      content="WhatsNewChat - Start a WhatsApp chat without saving phone number in your contacts"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://whatsnewchat.com/images/logo-512.png"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <title>WhatsNewChat - Start WhatsApp Chat Without Saving Number</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./country_selector/css/intlTelInput.min.css" />
+    <link rel="stylesheet" href="./css/toastify.min.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <div class="logo-section">
+          <a href="/">
+            <img
+              src="./images/logo.png"
+              class="logo-img"
+              alt="WhatsNewChat Logo"
+              title="Start Chat Without Saving Number"
+            />
+          </a>
+          <a href="/">
+            <span class="logo-text">WhatsNewChat</span>
+          </a>
+        </div>
+      </header>
+
+      <section class="main-input">
+        <h1 class="mb-1">Start WhatsApp Chat Without Saving Phone Number</h1>
+        <hr />
+        <form id="form" class="mt-2">
+          <p class="mb-2 phone-text unselectable"><sup>*</sup> Mobile Number</p>
+          <input id="phone" name="phone" type="tel" />
+
+          <p class="mt-2 mb-1 message unselectable">
+            Greeting message? (Optional)
+          </p>
+          <input autocomplete="off" id="message" name="message" type="text" />
+
+          <button type="submit" class="submit-button">Start Chat</button>
+        </form>
+
+        <span class="caution unselectable">This tool is NOT from WhatsApp</span>
+        <span class="app-version unselectable">WhatsNewChat v0.2.7 (Beta)</span>
+
+        <button id="installApp">Install on this device</button>
+        <a href="./app.html" style="display: none">App</a>
+      </section>
+
+      <section class="share-with-friends">
+        <h2 class="mb-1">Share with friends</h2>
+        <div class="icons-container" onclick="handleShare(event)">
+          <img
+            src="./images/social-icons/facebook.svg"
+            data-platform="facebook"
+            title="Share on Facebook"
+            alt="Share on Facebook"
+          />
+          <img
+            src="./images/social-icons/linkedin.svg"
+            data-platform="linkedin"
+            title="Share on LinkedIn"
+            alt="Share on LinkedIn"
+          />
+          <img
+            src="./images/social-icons/telegram.svg"
+            data-platform="telegram"
+            title="Share on Telegram"
+            alt="Share on Telegram"
+          />
+          <img
+            src="./images/social-icons/twitter.svg"
+            data-platform="twitter"
+            title="Share on Twitter"
+            alt="Share on Twitter"
+          />
+          <img
+            src="./images/social-icons/whatsapp.svg"
+            data-platform="whatsapp"
+            title="Share on WhatsApp"
+            alt="Share on WhatsApp"
+          />
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2 class="mb-1">Frequently Asked Questions</h2>
+        <div class="faq-container" onclick="handleFAQ(event)">
+          <div class="faq">
+            <button class="collapsible">What is WhatsNewChat?</button>
+            <div class="content">
+              <p>
+                WhatsNewChat is a simple tool designed to send WhatsApp messages
+                without saving number in your contacts.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq">
+            <button class="collapsible">
+              Is WhatsNewChat a tool from WhatsApp?
+            </button>
+            <div class="content">
+              <p>
+                NO, WhatsNewChat is not a tool/service from WhatsApp, this
+                service is not associated with Meta, Facebook or WhatsApp in any
+                way.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq">
+            <button class="collapsible">How does WhatsNewChat works?</button>
+            <div class="content">
+              <p>
+                Pretty simple, just enter the phone number, add some initial
+                message if you like or leave that empty and simply click on
+                "Start Chat" button. WhatsApp will open with a chat to that
+                number.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq">
+            <button class="collapsible">Is This Service Free Of Charge?</button>
+            <div class="content">
+              <p>YES! WhatsNewChat is and will be completely FREE.</p>
+            </div>
+          </div>
+
+          <div class="faq">
+            <button class="collapsible">
+              Do you collect or store our data?
+            </button>
+            <div class="content">
+              <p>
+                NO. We do not collect any data, none of your data reaches our
+                server, all the work is done on your device and data stays on
+                your device only.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq">
+            <button class="collapsible">
+              Can I download WhatsNewChat in my phone/browser?
+            </button>
+            <div class="content">
+              <p>
+                WhatsNewChat is an installable PWA, you can download it in your
+                device or bookmark it in your browser.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // If browser supports Service Worker..
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('./sw.js')
+          .then(() => console.log('SW Registered'))
+          .catch(error => console.log('SW Registration Failed: :^(', error));
+      }
+    </script>
+    <script src="./country_selector/js/intlTelInput.min.js"></script>
+    <script type="text/javascript" src="./js/toastify.js" defer></script>
+    <script type="text/javascript" src="./js/script.js" async></script>
+    <script type="text/javascript" src="./js/home.js" async></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-115172241-7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115172241-7');
+    </script>
+  </body>
+</html>

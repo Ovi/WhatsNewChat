@@ -1,0 +1,139 @@
+main {
+  #installApp {
+    display: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 50px auto;
+    border-radius: 3px;
+    border: none;
+    padding: 5px 8px;
+    font-family: inherit;
+    text-align: center;
+  }
+
+  section.share-with-friends {
+    position: relative;
+    z-index: 10;
+    margin: 80px 0 0;
+    background: #fff;
+    width: 600px;
+    height: 150px;
+    align-self: center;
+    padding: 20px;
+    border-radius: 5px;
+
+    h2 {
+      font-weight: normal;
+    }
+
+    .icons-container {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
+
+      img {
+        width: 50px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  section.faq {
+    position: relative;
+    z-index: 10;
+    margin: 80px 0 100px;
+    background: #fff;
+    width: 700px;
+    height: auto;
+    align-self: center;
+    padding: 20px;
+    border-radius: 5px;
+
+    h2 {
+      font-weight: normal;
+    }
+
+    .faq-container {
+      margin-top: 20px;
+
+      .faq {
+        margin-bottom: 5px;
+
+        .collapsible {
+          background-color: rgba(0, 0, 0, 0.075);
+          color: #353535;
+          cursor: pointer;
+          padding: 20px 15px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 16px;
+
+          &.active,
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.275);
+          }
+
+          &.active:after {
+            content: '\2212';
+          }
+
+          &:after {
+            content: '\002B';
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+          }
+        }
+
+        .content {
+          padding: 5px 15px 0px;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  main {
+    header.hidden-small {
+      display: none;
+    }
+
+    section.share-with-friends {
+      margin: 50px 0 0;
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+
+      h2 {
+        text-align: center;
+      }
+
+      .icons-container {
+        margin-top: 10px;
+
+        img {
+          width: 30px;
+        }
+      }
+    }
+
+    section.faq {
+      margin: 50px 0;
+      height: auto;
+      padding: 10px;
+      width: 100%;
+
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+}

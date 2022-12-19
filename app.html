@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="WhatsNewChat - Start a WhatsApp chat without saving phone number in your contacts"
+    />
+    <meta name="theme-color" content="#128C7E" />
+    <meta name="msapplication-TileColor" content="#128C7E" />
+    <meta name="msapplication-TileImage" content="./images/logo-192.png" />
+    <meta name="apple-mobile-web-app-title" content="WhatsNewChat" />
+    <meta name="application-name" content="WhatsNewChat" />
+    <link rel="icon" type="image/png" href="./images/fav.png" />
+    <link rel="canonical" href="https://whatsnewchat.com" />
+
+    <!-- Apple and Android home screen icons -->
+    <link href="./images/logo-128.png" rel="apple-touch-icon" />
+    <!-- 120x120px apple-touch-icon.png -->
+    <link href="./images/logo-152.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="./images/logo-167.png" rel="apple-touch-icon" sizes="167x167" />
+    <link href="./images/logo-180.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="./images/logo-192.png" rel="icon" sizes="192x192" />
+    <link href="./images/logo-128.png" rel="icon" sizes="128x128" />
+    <link href="./images/logo-32.png" rel="icon" sizes="32x32" />
+    <link href="./images/logo-16.png" rel="icon" sizes="16x16" />
+
+    <!-- Apple hide Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Apple changing the status bar appearance -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- Android add to the home screen -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Open graph tags -->
+    <meta
+      property="og:title"
+      content="WhatsNewChat - Start WhatsApp Chat Without Saving Number"
+    />
+    <meta property="og:site_name" content="WhatsNewChat" />
+    <meta property="og:url" content="https://whatsnewchat.com" />
+    <meta
+      property="og:description"
+      content="WhatsNewChat - Start a WhatsApp chat without saving phone number in your contacts"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://whatsnewchat.com/images/logo-512.png"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <title>WhatsNewChat - Start WhatsApp Chat Without Saving Number</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./country_selector/css/intlTelInput.min.css" />
+    <link rel="stylesheet" href="./css/toastify.min.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <div class="logo-section">
+          <a href="/app.html">
+            <img
+              src="./images/logo.png"
+              class="logo-img"
+              alt="WhatsNewChat logo"
+              title="Start Chat Without Saving Number"
+            />
+          </a>
+          <a href="/app.html">
+            <span class="logo-text">WhatsNewChat</span>
+          </a>
+        </div>
+      </header>
+      <section class="main-input">
+        <h1 class="mb-1">Start WhatsApp Chat Without Saving Phone Number</h1>
+        <hr />
+        <form id="form" class="mt-2">
+          <p class="mb-2 phone-text unselectable"><sup>*</sup> Mobile Number</p>
+          <input id="phone" name="phone" type="tel" />
+
+          <p class="mt-2 mb-1 message unselectable">
+            Greeting message? (Optional)
+          </p>
+          <input id="message" name="message" type="text" />
+
+          <button type="submit" class="submit-button">Start Chat</button>
+        </form>
+
+        <span class="caution unselectable">This tool is NOT from WhatsApp</span>
+        <span class="app-version unselectable">WhatsNewChat v0.2.7 (Beta)</span>
+      </section>
+    </main>
+
+    <script>
+      // // If browser supports Service Worker..
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('./sw.js')
+          .then(() => console.log('SW Registered'))
+          .catch(error => console.log('SW Registration Failed: :^(', error));
+      }
+    </script>
+    <script src="./country_selector/js/intlTelInput.min.js"></script>
+    <script type="text/javascript" src="./js/toastify.js" defer></script>
+    <script type="text/javascript" src="./js/script.js" async></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-115172241-7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115172241-7');
+    </script>
+  </body>
+</html>

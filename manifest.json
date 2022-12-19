@@ -1,0 +1,25 @@
+{
+  "short_name": "WhatsNewChat",
+  "name": "WhatsNewChat",
+  "version": "0.0.1",
+  "description": "WhatsNewChat - Start Chat Without Saving Number",
+  "author": "Muhammad Ovi",
+  "github": "https://github/Ovi",
+  "icons": [
+    {
+      "src": "/images/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./app.html",
+  "display": "standalone",
+  "theme_color": "#008080",
+  "background_color": "#008080"
+}
