@@ -1,7 +1,7 @@
 'use strict';
 
 // Static Files as version
-const staticCacheVersion = 'v0.0.1';
+const staticCacheVersion = 'v0.1.0';
 
 // Files to cache
 const files = [
@@ -72,12 +72,14 @@ self.addEventListener('activate', e => {
   return self.clients.claim();
 });
 
+const cacheFirstOrigins = [location.origin, 'https://ipinfo.io'];
+
 // Fetch
 self.addEventListener('fetch', e => {
   const req = e.request;
   const url = new URL(req.url);
 
-  if (url.origin === location.origin) {
+  if (cacheFirstOrigins.includes(url.origin)) {
     return e.respondWith(cacheFirst(req));
   }
 
@@ -86,7 +88,12 @@ self.addEventListener('fetch', e => {
 
 async function cacheFirst(req) {
   const cacheRes = await caches.match(req);
-  return cacheRes || fetch(req);
+
+  if (cacheRes && cacheRes.status === 200) {
+    return cacheRes;
+  }
+
+  return fetch(req);
 }
 
 async function networkFirst(req) {

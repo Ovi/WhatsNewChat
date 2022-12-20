@@ -12,7 +12,12 @@ const iti = window.intlTelInput(input, {
       const data = await fetch('https://ipinfo.io/?token=d32f445400d6b0');
       const json = await data.json();
 
-      success(json.country || 'us');
+      if (!json.country) {
+        success('us');
+        return;
+      }
+
+      success(json.country);
 
       if (window.intlTelInputGlobals) {
         const countryData = window.intlTelInputGlobals
