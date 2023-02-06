@@ -111,6 +111,8 @@ Recent Chats
 
 function loadRecentChats() {
   const chatListDOM = document.querySelector('#chats-list');
+  if (!chatListDOM) return;
+
   chatListDOM.innerHTML = '';
 
   const chatsStr = localStorage.getItem('app_recent_chats') || '[]';
@@ -164,17 +166,16 @@ function addInRecentChats(link, number) {
 
 function addRecentChatLinkListener() {
   const recentChats = document.querySelector('#recent-chats');
+  if (!recentChats) return;
 
-  if (recentChats) {
-    recentChats.addEventListener('click', function (e) {
-      if (e.target?.matches('.recent_number *')) {
-        e.preventDefault();
+  recentChats.addEventListener('click', function (e) {
+    if (e.target?.matches('.recent_number *')) {
+      e.preventDefault();
 
-        const parent = e.target.closest('.recent_number');
-        openInNewTab(parent.getAttribute('data-url'));
-      }
-    });
-  }
+      const parent = e.target.closest('.recent_number');
+      openInNewTab(parent.getAttribute('data-url'));
+    }
+  });
 }
 
 function getDateFormatted() {
