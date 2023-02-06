@@ -86,8 +86,8 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 600px;
+  height: 100%;
   width: 100%;
-  height: auto;
   padding-bottom: 30px;
 
   header {
@@ -135,7 +135,7 @@ main {
     margin-top: 125px;
     background: #fff;
     width: 80%;
-    max-width: 600px;
+    max-width: 768px;
     height: calc(100% - 200px);
     min-height: 550px;
     max-height: 700px;
@@ -167,7 +167,7 @@ main {
       font-size: 24px;
       font-weight: lighter;
       border-radius: 3px;
-      border: 2px solid rgb(228, 228, 228);
+      border: 2px solid #e4e4e4;
       padding: 8px;
       font-family: inherit;
     }
@@ -204,26 +204,28 @@ main {
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.19);
       }
     }
+  }
 
-    .caution {
-      width: 100%;
-      position: absolute;
-      text-align: center;
-      bottom: 40px;
-      opacity: 0.5;
-      left: 0;
-      font-size: 13px;
-    }
+  #recent-chats {
+    display: none;
+  }
 
-    .app-version {
-      width: 100%;
-      position: absolute;
-      text-align: center;
-      bottom: 20px;
-      opacity: 0.5;
-      left: 0;
-      font-size: 12px;
-    }
+  .caution {
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+    bottom: 40px;
+    opacity: 0.5;
+    font-size: 13px;
+  }
+
+  .app-version {
+    width: 100%;
+    text-align: center;
+    bottom: 20px;
+    opacity: 0.5;
+    font-size: 12px;
+    padding-bottom: 10px;
   }
 }
 
@@ -231,7 +233,7 @@ main {
   width: 100%;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 767px) {
   main {
     padding-bottom: 0;
 
@@ -248,7 +250,7 @@ main {
       background: #fff;
       width: 100%;
       height: 100%;
-      min-height: calc(100vh - 80px);
+      min-height: max-content;
       margin-top: 80px;
       padding: 20px;
       box-shadow: none;
@@ -264,6 +266,56 @@ main {
 
       .submit-button {
         margin: 20px auto;
+      }
+    }
+
+    #recent-chats {
+      display: block;
+      background-color: #e4e4e4;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding-top: 8px;
+
+      .title {
+        font-size: 20px;
+        font-weight: normal;
+      }
+
+      .helper-text {
+        display: inline-block;
+        font-size: 13px;
+        max-width: 80%;
+        margin-bottom: 10px;
+      }
+
+      .recent_number {
+        display: block;
+        text-decoration: none;
+        font-size: 22px;
+        padding: 4px;
+        background-color: #f0f0f0;
+        color: inherit;
+        opacity: 0.5;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+
+        &:hover,
+        &:active {
+          opacity: 1;
+        }
+
+        .number {
+          display: block;
+          font-size: 22px;
+        }
+
+        .date {
+          display: block;
+          font-size: 10px;
+        }
       }
     }
   }
