@@ -1,7 +1,7 @@
 'use strict';
 
 // Static Files as version
-const staticCacheVersion = 'v0.1.0';
+const staticCacheVersion = 'v0.1.1';
 
 // Files to cache
 const files = [
