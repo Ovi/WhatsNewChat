@@ -171,6 +171,7 @@ function addRecentChatLinkListener() {
   recentChats.addEventListener('click', function (e) {
     if (e.target?.matches('.recent_number *')) {
       e.preventDefault();
+      e.stopImmediatePropagation();
 
       const parent = e.target.closest('.recent_number');
       openInNewTab(parent.getAttribute('data-url'));
