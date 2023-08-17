@@ -75,7 +75,7 @@ form.addEventListener('submit', e => {
 
   const numberWithoutPlus = number.substr(1);
 
-  const miscParams = `${WhatsAppAPI}?type=phone_number&app_absent=0`;
+  const miscParams = `${WhatsAppAPI}?type=phone_number&autoload=1&app_absent=1`;
   const link = `${miscParams}&phone=${numberWithoutPlus}&text=${message || ''}`;
 
   addInRecentChats(link, number);

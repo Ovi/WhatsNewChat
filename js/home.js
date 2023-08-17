@@ -57,7 +57,7 @@ function handleShare({ target: el } = {}) {
 
     case 'whatsapp':
       openURL(
-        `https://api.whatsapp.com/send/?text=${text}%0A${url}&app_absent=0`,
+        `https://api.whatsapp.com/send/?text=${text}%0A${url}&autoload=1&app_absent=1`,
       );
       break;
 
