@@ -1,0 +1,23 @@
+name: 🔥 Firebase Continuous Deployment
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '**/**'
+
+jobs:
+  deploy:
+    name: Deploy (frontend)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.11.0
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
