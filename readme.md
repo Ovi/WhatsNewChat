@@ -4,7 +4,7 @@
 - Add number and message (optional) and press Start button to start the chat.
 - That's pretty much of it 😃
 
-Live: https://WhatsNewChat.com
+Live: https://whatsnewchat.bly.to
 
 _WhatsApp name/logo used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement, affiliation, and/or association._
 

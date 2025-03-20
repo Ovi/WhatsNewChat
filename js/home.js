@@ -25,7 +25,7 @@ function openURL(url) {
   return window.open(url, 'popup', options), !1;
 }
 
-const url = 'https://whatsnewchat.com';
+const url = 'https://whatsnewchat.bly.to';
 const text = `Send WhatsApp message without saving the number.`;
 
 function handleShare({ target: el } = {}) {
